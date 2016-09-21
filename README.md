@@ -1,5 +1,5 @@
 # simpleMemoryManager
-Simple Memory Class. Includes a couple of Windows APIs and Handle/Reading/Writing  
+Simple C# Memory Class. Includes a Windows API Class and Handle/Reading/Writing functions
 
 You need to use the following namespaces
 using System;
