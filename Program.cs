@@ -45,6 +45,13 @@
     {
         return setModuleAddress(moduleName);
     }
+    public void deconstruct() //cleanup added 9/27/2016
+    {
+        if (processHandle != IntPtr.Zero) //check to make sure that we have a Handle opened
+        {
+           bool hresult = CloseHandle(processHandle);
+        }
+    }
 
 
     //memory reading//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,6 +132,9 @@ class windowsAPIs
     [DllImport("kernel32.dll")]
     public static extern IntPtr OpenProcess(int dwDesiredAccess, bool bInheritHandle, int dwProcessId); //so we can get access to the process
 
+    [DllImport("Kernel32")] //added 9/27/2016
+    public static extern Boolean CloseHandle(IntPtr handle);
+    
     [DllImport("kernel32.dll")]
     public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] buffer, int size, int lpNumberOfBytesRead); //so we can read data from the process using our handle
 
