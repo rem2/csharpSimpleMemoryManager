@@ -144,11 +144,11 @@ class windowsAPIs
     private const int MOUSEEVENTF_LEFTDOWN = 0x02;
     private const int MOUSEEVENTF_LEFTUP = 0x04;
 
-    public void DoLeftMouseClick()
+    public void doLeftMouseClick()
     {
         mouse_event(MOUSEEVENTF_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0);
     }
-    public bool IsKeyPushedDown(int vKey)
+    public bool isKeyPushedDown(int vKey)
     {
         return 0 != (GetAsyncKeyState(vKey) & 0x8000); //bitwise checks to see if key is pressed down
     }
