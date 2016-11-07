@@ -138,7 +138,7 @@ class windowsAPIs
     [DllImport("kernel32.dll")]
     public static extern bool ReadProcessMemory(int hProcess, int lpBaseAddress, byte[] buffer, int size, int lpNumberOfBytesRead); //so we can read data from the process using our handle
 
-    [DllImport("kernel32.dll", SetLastError = true)]
+    [DllImport("kernel32.dll")] //removed SetLastError = true
     public static extern bool WriteProcessMemory(int hProcess, int lpBaseAddress, byte[] buffer, int size, int lpNumberOfBytesWritten); //could be ref int lpNumberOfBytesWritten but im not interested in how much ive written to the process
 
     private const int MOUSEEVENTF_LEFTDOWN = 0x02;
